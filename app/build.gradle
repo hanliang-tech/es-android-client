@@ -1,0 +1,52 @@
+apply plugin: 'com.android.application'
+apply plugin: 'kotlin-android'
+
+android {
+  compileSdkVersion 30
+  buildToolsVersion "30.0.2"
+
+  defaultConfig {
+    minSdkVersion 21
+    targetSdkVersion 30
+    applicationId "com.hili.mp.demo.client"
+    versionCode 1
+    versionName '1.0'
+    ndk {
+      abiFilters "armeabi-v7a"
+    }
+  }
+
+  buildTypes {
+    release {
+      minifyEnabled true
+      debuggable true
+      proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+    }
+    debug {
+      minifyEnabled false
+    }
+  }
+  compileOptions {
+    sourceCompatibility JavaVersion.VERSION_1_8
+    targetCompatibility JavaVersion.VERSION_1_8
+  }
+}
+
+configurations.all {
+  // 动态版本
+  resolutionStrategy.cacheDynamicVersionsFor 0, 'seconds'
+  // 变化模块
+  resolutionStrategy.cacheChangingModulesFor 0, 'seconds'
+}
+
+
+dependencies {
+  implementation "androidx.core:core-ktx:1.2.0"
+  implementation 'androidx.appcompat:appcompat:1.2.0'
+  implementation 'androidx.recyclerview:recyclerview:1.1.0'
+  implementation 'androidx.swiperefreshlayout:swiperefreshlayout:1.1.0'
+  debugImplementation 'com.squareup.leakcanary:leakcanary-android:2.7'
+  implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
+
+  implementation 'com.hili.sdk.mp:client:1.0.7.3'
+}

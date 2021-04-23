@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+  <string name="app_name">手机端demo</string>
+
+  <item name="id_view_tag" type="id" />
+</resources>

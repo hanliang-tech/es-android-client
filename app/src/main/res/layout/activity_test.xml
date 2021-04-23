@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="startSearch"
+            android:text="搜索" />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="stopSearch"
+            android:text="停止搜索" />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="destroy"
+            android:text="销毁" />
+
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/tv_device_name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColor="#88000000"
+        android:textSize="16dp" />
+
+    <LinearLayout
+        android:id="@+id/ev_container"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:visibility="gone">
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="startEsApp"
+            android:text="启动扩展屏" />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="startNativeApp"
+            android:text="启动原生应用" />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="sendEvent"
+            android:text="发送自定义事件" />
+
+    </LinearLayout>
+
+    <com.hili.mp.demo.client.RefreshDeviceComponent
+        android:id="@+id/component"
+        android:layout_width="match_parent"
+        android:layout_height="260dp"/>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:paddingLeft="20dp"
+        android:paddingRight="20dp"
+        android:paddingBottom="20dp"
+        android:scrollbars="none">
+
+        <TextView
+            android:id="@+id/tv_infos"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="#88000000"
+            android:textSize="16dp" />
+    </ScrollView>
+
+</LinearLayout>
